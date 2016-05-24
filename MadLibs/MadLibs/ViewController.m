@@ -21,6 +21,9 @@
 @end
 
 @implementation ViewController
+NSString *noun = @"";
+NSString *verb =@"";
+NSString *result =@"";
 
 
 - (void)viewDidLoad {
@@ -35,6 +38,10 @@
 
 
 - (IBAction)generateMadLib:(UIButton *)sender {
+    noun = self.noutTextLabel.text;
+    verb = self.verbTextLabel.text;
+    result = [NSString stringWithFormat:@"test noun to be %@, test ver to be %@", noun, verb];
+    NSLog(result);
 }
 
 @end
