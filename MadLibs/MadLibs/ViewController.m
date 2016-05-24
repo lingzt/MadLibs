@@ -40,8 +40,11 @@ NSString *result =@"";
 - (IBAction)generateMadLib:(UIButton *)sender {
     noun = self.noutTextLabel.text;
     verb = self.verbTextLabel.text;
-    result = [NSString stringWithFormat:@"test noun to be %@, test ver to be %@", noun, verb];
+    result = [NSString stringWithFormat:@"Talking about my friend Robb, he is obsessed with %@,  and he like to  %@ 10 times every morning", noun, verb];
     NSLog(result);
+    self.resultLabel.text = result;
+    int r = arc4random_uniform(5);
+    NSLog(@"%d",r);
 }
 
 @end
