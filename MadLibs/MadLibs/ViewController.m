@@ -38,13 +38,14 @@ NSString *result =@"";
 
 
 - (IBAction)generateMadLib:(UIButton *)sender {
+    int r = arc4random_uniform(3);
     noun = self.noutTextLabel.text;
     verb = self.verbTextLabel.text;
-    result = [NSString stringWithFormat:@"Talking about my friend Robb, he is obsessed with %@,  and he like to  %@ 10 times every morning", noun, verb];
+    NSArray *resultsArray = @[[NSString stringWithFormat:@"Talking about my friend Robb, he is obsessed with %@s, and he like to %@ 10 times every morning", noun, verb], [NSString stringWithFormat:@"Talking about my friend Erika, She can't stand %@s, and he like to %@ on the weekends", noun, verb], [NSString stringWithFormat:@"Mike has a huge collection of %@s, and he doesn't know how to %@", noun, verb]];
+    result = resultsArray[r];
     NSLog(result);
     self.resultLabel.text = result;
-    int r = arc4random_uniform(5);
-    NSLog(@"%d",r);
+        NSLog(@"%d",r);
 }
 
 @end
