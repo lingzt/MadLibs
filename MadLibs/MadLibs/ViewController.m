@@ -23,6 +23,10 @@
 @implementation ViewController
 NSString *noun = @"";
 NSString *verb =@"";
+NSString *adjective =@"";
+NSString *location =@"";
+NSString *person =@"";
+NSString *timeOfDay =@"";
 NSString *result =@"";
 
 
@@ -41,7 +45,12 @@ NSString *result =@"";
     int r = arc4random_uniform(3);
     noun = self.noutTextLabel.text;
     verb = self.verbTextLabel.text;
-    NSArray *resultsArray = @[[NSString stringWithFormat:@"Talking about my friend Robb, he is obsessed with %@s, and he like to %@ 10 times every morning", noun, verb], [NSString stringWithFormat:@"Talking about my friend Erika, She can't stand %@s, and he like to %@ on the weekends", noun, verb], [NSString stringWithFormat:@"Mike has a huge collection of %@s, and he doesn't know how to %@", noun, verb]];
+    adjective = self.adjectiveTextLabel.text;
+    location = self.locationTextLabel.text;
+    person = self.personTextLabel.text;
+    timeOfDay = self.timeOfDayTextLabel.text;
+    
+    NSArray *resultsArray = @[[NSString stringWithFormat:@"This guy Robb lives next to my friend %@ at %@. He is obsessed with %@ %@s, and he like to %@ 10 times every %@.", person, location, adjective, noun, verb, timeOfDay], [NSString stringWithFormat:@"Talking about my friend Erika, She can't stand %@s, and she like to %@ on the weekends", noun, verb], [NSString stringWithFormat:@"Mike has a huge collection of %@s, and he doesn't know how to %@", noun, verb]];
     result = resultsArray[r];
     NSLog(result);
     self.resultLabel.text = result;
